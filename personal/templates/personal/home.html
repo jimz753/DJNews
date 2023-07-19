@@ -15,7 +15,7 @@
 		}
 	}
 
-	.blog-post-container {
+	.news-post-container {
 		margin-bottom: 20px;
 		width: 100%;
 	}
@@ -46,16 +46,16 @@
 				<div class="card m-auto d-flex flex-column p-3">
 					<img class="img-fluid d-block m-auto pb-2" src="{% static 'django.png' %}" width="72"
 						height="72">
-					<p class="lead">IEste é um blog de notícias, escrito por usuários como você. Se quiser ler fique a vontade.
-					Para botar escrever notícias é necessário se inscrever no site. Faça uma conta grátis agora mesmo e se junte a
+					<p class="lead">IEste é um site de notícias, escrito por usuários como você. Se quiser ler fique a vontade.
+					Para poder escrever notícias é necessário se inscrever no site. Faça uma conta grátis agora mesmo e se junte a
 					comunidade DJNews!</p>
-					<p class="m-auto"><a class="btn btn-primary" href="{% url 'blog:create' %}">Criar notícia</a></p>
+					<p class="m-auto"><a class="btn btn-primary" href="{% url 'news:create' %}">Criar notícia</a></p>
 				</div>
 			</div>
 
-			{% for post in blog_posts %}
-			<div class="blog-post-container">
-				{% include 'blog/snippets/blog_post_snippet.html' with blog_post=post %}
+			{% for post in news_posts %}
+			<div class="news-post-container">
+				{% include 'news/snippets/news_post_snippet.html' with news_post=post %}
 			</div>
 			{% endfor %}
 		</div>
@@ -66,9 +66,9 @@
 			<div class="card create-post-bar d-flex flex-column p-3">
 				<img class="img-fluid d-block m-auto pb-2" src="{% static 'django.png' %}" width="72"
 					height="72">
-				<p class="lead">Este é um blog de notícias, escrito por usuários como você. Se quiser ler fique a vontade.
-					Para botar escrever notícias é necessário se inscrever no site. Faça uma conta grátis agora mesmo e se junte a comunidade DJNews! </p>
-				<p class="m-auto"><a class="btn btn-primary" href="{% url 'blog:create' %}">Criar notícia</a></p>
+				<p class="lead">Este é um site de notícias, escrito por usuários como você. Se quiser ler fique a vontade.
+					Para poder escrever notícias é necessário se inscrever no site. Faça uma conta grátis agora mesmo e se junte a comunidade DJNews! </p>
+				<p class="m-auto"><a class="btn btn-primary" href="{% url 'news:create' %}">Criar notícia</a></p>
 			</div>
 
 		</div>

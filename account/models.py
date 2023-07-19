@@ -37,6 +37,8 @@ class Account(AbstractBaseUser):
 	date_joined				= models.DateTimeField(verbose_name='date joined', auto_now_add=True)
 	last_login				= models.DateTimeField(verbose_name='last login', auto_now=True)
 	is_admin				= models.BooleanField(default=False)
+	is_editor				= models.BooleanField(default=False)
+	is_writer				= models.BooleanField(default=False)
 	is_active				= models.BooleanField(default=True)
 	is_staff				= models.BooleanField(default=False)
 	is_superuser			= models.BooleanField(default=False)
@@ -52,6 +54,12 @@ class Account(AbstractBaseUser):
 
 	def has_perm(self, perm, obj=None):
 		return self.is_admin
+
+	def is_editor(self):
+		return self.is_editor
+
+	def is_writer(self):
+		return self.is_writer
 
 	def has_module_perms(self, app_label):
 		return True

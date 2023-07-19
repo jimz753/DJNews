@@ -5,10 +5,11 @@ from news.views import (
 	edit_news_view,
 )
 
-app_name = 'blog'
+app_name = 'news'
 
 urlpatterns = [
     path('create/', create_news_view, name="create"),
     path('<slug>/', detail_news_view, name="detail"),
     path('<slug>/edit/', edit_news_view, name="edit"),
  ]
+

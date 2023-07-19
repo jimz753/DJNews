@@ -30,14 +30,14 @@ from account.views import (
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', home_screen_view, name='home'),
-    path('register/', registration_view, name='register'),
-    path('logout/', logout_view, name='logout'),
-    path('login/', login_view, name='login'),
     path('account/', account_view, name='account'),
-    path('news/', include('news.urls', 'news')),
+    path('admin/', admin.site.urls),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
     path('must_authenticate/', must_authenticate_view, name='must_authenticate'),
+    path('news/', include('news.urls', 'news')),
+    path('register/', registration_view, name='register'),
 ]
 
 if settings.DEBUG:
